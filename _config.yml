@@ -21,8 +21,7 @@
 title: GRAVELISTAN
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Všetko o gravel cyklistike 
-- tipy na výbavu, tréning, trasy a závody.
+Všetko o gravel cyklistike. Tipy na výbavu, tréning, trasy a závody.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://gravelistan.eu/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
