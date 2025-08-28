@@ -7,3 +7,4 @@ header:
   overlay_image: /assets/images/mm-home-page-feature.jpg
 excerpt: >
   Všetko o gravel cyklistike. Tipy na výbavu, tréning, trasy a závody.
+---
