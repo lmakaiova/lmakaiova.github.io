@@ -1,0 +1,12 @@
+main:
+  - title: "Domov"
+    url: /
+  - title: "Tréning a výživa"
+    url: /training/
+  - title: "Servis"
+    url: /servis/
+  - title: "Preteky"
+    url: /races/
+  - title: "O mne"
+    url: /about/
+    
