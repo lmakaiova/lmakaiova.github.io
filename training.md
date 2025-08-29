@@ -3,7 +3,6 @@ title: Tréning
 layout: category
 permalink: "/training/"
 ---
-# Príspevky o tréningu
 
 <ul>
 {% assign category_name = "training" %}
