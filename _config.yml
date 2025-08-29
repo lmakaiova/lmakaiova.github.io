@@ -34,6 +34,32 @@ plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
 navigation: main
+
+author:
+  name: "Samuel Bršel"
+  avatar: "/assets/images/profile.jpeg" # path to your image
+  bio: "Nieco o mne"
+  location: "Nové Zámky, Slovensko"
+  links:
+    - label: "Strava"
+      icon: "fab fa-strava"
+      url: "https://www.strava.com/athletes/19399936"
+    - label: "Instagram"
+      icon: "fab fa-instagram"
+      url: "https://www.instagram.com/sbrsel/"
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+  - scope:
+      path: ""
+      type: posts 
+    values:
+      layout: single
+  
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
