@@ -5,7 +5,7 @@ A simple blogpost-style webpage about **gravel** built with the [Minimal Mistake
 ---
 
 ## 🚀 Live Site
-👉 [gravelistan](https://gravelistan.eu)
+👉 [gravelistan](http://gravelistan.eu)
 
 ---
 
