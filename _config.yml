@@ -37,7 +37,7 @@ navigation: main
 
 author:
   name: "Samuel Bršel"
-  avatar: "/assets/images/profile.jpeg" # path to your image
+  avatar: "/assets/images/profile_pic.jpeg" # path to your image
   bio: "Nieco o mne"
   location: "Nové Zámky, Slovensko"
   links:
