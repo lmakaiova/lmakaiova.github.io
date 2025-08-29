@@ -5,7 +5,7 @@ A simple blogpost-style webpage about **gravel** built with the [Minimal Mistake
 ---
 
 ## 🚀 Live Site
-👉 [Your Blog URL](https://yourusername.github.io/gravel-blog)
+👉 [gravelistan](https://gravelistan.eu)
 
 ---
 
