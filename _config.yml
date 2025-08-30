@@ -35,6 +35,9 @@ plugins:
   - jekyll-include-cache
 navigation: main
 
+header:
+  background: "##968e8c"
+  
 author:
   name: "Samuel Bršel"
   avatar: "/assets/images/profile_pic.jpeg" # path to your image
