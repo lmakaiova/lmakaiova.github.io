@@ -38,8 +38,8 @@ navigation: main
 author:
   name: "Samuel Bršel"
   avatar: "/assets/images/profile_pic.jpeg" # path to your image
-  bio: "Nieco o mne"
-  location: "Nové Zámky, Slovensko"
+  bio: "profesionálny hobby cyklista"
+  location: "Brno, Česko"
   links:
     - label: "Strava"
       icon: "fab fa-strava"
