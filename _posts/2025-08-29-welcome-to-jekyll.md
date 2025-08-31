@@ -4,6 +4,8 @@ layout: single
 date: '2025-08-29 00:24:33 +0200'
 categories:
 - training
+header:
+  teaser: /assets/images/post_test/img_1_thumbnail.jpg
 gallery:
   - url: /assets/images/post_test/img_1.webp
     image_path: /assets/images/post_test/img_1_thumbnail.jpg

@@ -16,18 +16,19 @@ layout: default
           {% assign newest_post = site.posts | where_exp: "post", "post.published != false" | sort: "date" | reverse | first %}
           {% if newest_post %}
             <div style="margin-top: 2rem; background: rgba(255, 255, 255, 0.169); box-shadow: 0 4px 16px 0 rgba(42,61,102,0.10); padding: 1.5rem 1.25rem; max-width: 420px;">
-              <a href="{{ newest_post.url | relative_url }}" style="color: #ffffff; font-weight: 600; text-decoration: none; font-size: 1.15rem;">
+              <a href="{{ newest_post.url | relative_url }}" style="color: #ffffff; font-weight: 600; text-decoration: none; font-size: 1rem;">
                 {{ newest_post.title }}
               </a>
               {% if newest_post.excerpt %}
-                <p style="margin-top: 0.7em; color: #ffffff; font-size: 1em;">
-                  {{ newest_post.excerpt | strip_html | truncatewords: 30 }}
+                <p style="margin-top: 0.7em; color: #ffffff; font-size: 0.7em;">
+                  {{ newest_post.excerpt | strip_html | truncatewords: 15 }}
                 </p>
               {% else %}
-                <p style="margin-top: 0.7em; color: #ffffff; font-size: 1em;">
-                  {{ newest_post.content | strip_html | truncatewords: 30 }}
+                <p style="margin-top: 0.7em; color: #ffffff; font-size: 0.7em;">
+                  {{ newest_post.content | strip_html | truncatewords: 15 }}
                 </p>
-              {% endif %}            </div>
+              {% endif %}            
+            </div>
           {% endif %}
         </div>
         <!-- No right side block -->
@@ -35,19 +36,52 @@ layout: default
     </div>
   </header>
 
-  <!-- Welcome paragraph with white background -->
-  <section class="welcome-block" style="background: #fff; padding: 2.5rem 0;">
-    <div class="wrapper" style="max-width: 900px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; box-sizing: border-box;">
-      <p style="font-size: 1.2rem; margin: 0;">
-        Vitajte na stránke venovanej gravel cyklistike! Objavte tipy, trasy, výbavu a všetko, čo potrebujete pre svoje dobrodružstvá na dvoch kolesách.
-      </p>
+  <main class="home__content wrapper">
+  <!-- Main content from index.md with new background -->
+  <section class="what-you-find" style="max-width: 900px; margin: 2.5rem auto 0 auto; padding: 0 2rem;">  
+    <main class="page__content wrapper" style="padding: 2rem; background: #f5f7fa; border-radius: 1rem; ">
+      {{ content }}
+    </main>
+  </section>
+  
+  <!-- Newest articles block (centered, outside header) -->
+  <section class="newest-articles" style="max-width: 900px; margin: 2.5rem auto 0 auto; padding: 0 2rem;">
+    <div style="background: #fff; border-radius: 1rem; box-shadow: 0 4px 16px 0 rgba(42,61,102,0.10); padding: 2rem;">
+      <h3 style="margin-top:0; color: #2a3d66; font-size: 1.2rem; text-align: left;">Najnovšie články</h3>
+      <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+        {% assign recent_posts = site.posts | where_exp: "post", "post.published != false" | sort: "date" | reverse %}
+        {% for post in recent_posts limit:3 %}
+          <li style="margin-bottom: 1.3rem;">
+            <div style="display: flex; align-items: flex-start; gap: 1.2rem;">
+              {% if post.header.teaser %}
+                <a href="{{ post.url | relative_url }}" style="flex-shrink:0;">
+                  <img src="{{ post.header.teaser | relative_url }}" alt="Teaser obrázok" style="width: 8em; height: 8em;  object-fit: cover; border-radius: 0;">
+                </a>
+              {% endif %}
+            <div>
+            <a href="{{ post.url | relative_url }}" style="color: #2a3d66; font-weight: 600; text-decoration: none; font-size: 1.1rem;">
+              {{ post.title }}
+            </a>
+            <br>
+            <span style="font-size: 0.95em; color: #6c7ba0;">{{ post.date | date: "%-d.%-m.%Y" }}</span>
+            <br>
+            {% if post.excerpt %}
+                <p style="margin-top: 0.5em; color: #2a3d66; font-size: 0.7em;">
+                  {{ post.excerpt | strip_html | truncatewords: 30 }}
+                </p>
+              {% else %}
+                <p style="margin-top: 0.5em; color: #2a3d66; font-size: 0.7em;">
+                  {{ post.content | strip_html | truncatewords: 30 }}
+                </p>
+              {% endif %}
+            </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </section>
-
-  <!-- Main content from index.md with new background -->
-  <main class="page__content wrapper" style="max-width: 900px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; box-sizing: border-box; background: #f5f7fa; border-radius: 1rem; padding-top: 2.5rem; padding-bottom: 2.5rem;">
-    {{ content }}
-  </main>
+  
 
   <!-- Contact section with scaled profile and form, no name field -->
   <section class="contact wrapper" style="max-width: 900px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; box-sizing: border-box;">
@@ -75,5 +109,5 @@ layout: default
       </div>
     </div>
   </section>
-
+  </main>
 </div>
