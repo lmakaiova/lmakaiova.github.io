@@ -1,20 +1,79 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
+<div class="home">
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Nedávne príspevky" }}</h3>
+  <header class="page__header overlay" style="background-image: url('{{ page.header.overlay_image | relative_url }}'); background-color: #2a3d66; min-height: 650px; padding-top: 12rem; padding-bottom: 2rem; display: flex; align-items: left; box-shadow: 0 8px 32px 0 rgba(42,61,102,0.25); border-bottom-left-radius: 16px 8px; border-bottom-right-radius: 16px 8px; background-size: cover; background-position: center;">
+    <div class="wrapper" style="max-width: 1100px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; box-sizing: border-box; width: 100%;">
+      <div style="display: flex; flex-direction: row; gap: 2.5rem; align-items: flex-end;">
+        <!-- Left: Title, excerpt, CTA or newest article -->
+        <div style="flex: 2;">
+          <h1 class="page__title" style="color: #fff; text-shadow: 0 2px 16px rgba(42,61,102,0.25);">{{ site.title }}</h1>
+          {% if page.excerpt %}
+            <p class="page__excerpt" style="color: #e0e6f6; text-shadow: 0 1px 8px rgba(42,61,102,0.15);">{{ page.excerpt }}</p>
+          {% endif %}
+          {% assign newest_post = site.posts | where_exp: "post", "post.published != false" | sort: "date" | reverse | first %}
+          {% if newest_post %}
+            <div style="margin-top: 2rem; background: rgba(255, 255, 255, 0.169); box-shadow: 0 4px 16px 0 rgba(42,61,102,0.10); padding: 1.5rem 1.25rem; max-width: 420px;">
+              <a href="{{ newest_post.url | relative_url }}" style="color: #ffffff; font-weight: 600; text-decoration: none; font-size: 1.15rem;">
+                {{ newest_post.title }}
+              </a>
+              {% if newest_post.excerpt %}
+                <p style="margin-top: 0.7em; color: #ffffff; font-size: 1em;">
+                  {{ newest_post.excerpt | strip_html | truncatewords: 30 }}
+                </p>
+              {% else %}
+                <p style="margin-top: 0.7em; color: #ffffff; font-size: 1em;">
+                  {{ newest_post.content | strip_html | truncatewords: 30 }}
+                </p>
+              {% endif %}            </div>
+          {% endif %}
+        </div>
+        <!-- No right side block -->
+      </div>
+    </div>
+  </header>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+  <!-- Welcome paragraph with white background -->
+  <section class="welcome-block" style="background: #fff; padding: 2.5rem 0;">
+    <div class="wrapper" style="max-width: 900px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; box-sizing: border-box;">
+      <p style="font-size: 1.2rem; margin: 0;">
+        Vitajte na stránke venovanej gravel cyklistike! Objavte tipy, trasy, výbavu a všetko, čo potrebujete pre svoje dobrodružstvá na dvoch kolesách.
+      </p>
+    </div>
+  </section>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=posts type=entries_layout %}
+  <!-- Main content from index.md with new background -->
+  <main class="page__content wrapper" style="max-width: 900px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; box-sizing: border-box; background: #f5f7fa; border-radius: 1rem; padding-top: 2.5rem; padding-bottom: 2.5rem;">
+    {{ content }}
+  </main>
+
+  <!-- Contact section with scaled profile and form, no name field -->
+  <section class="contact wrapper" style="max-width: 900px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; box-sizing: border-box;">
+    <h2>Kontaktujte ma</h2>
+    <div class="contact-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: stretch; min-height: 320px;">
+      <!-- Profile image -->
+      <div class="contact-photo" style="flex: 1; min-width: 200px; display: flex; align-items: stretch;">
+        <img src="/assets/images/profile_pic.jpeg" alt="Profilová fotka" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; min-height: 320px;">
+      </div>
+      <!-- Contact form -->
+      <div class="contact-form" style="flex: 2; min-width: 280px; display: flex; align-items: stretch;">
+        <form action="https://formspree.io/f/your-form-id" method="POST" style="width: 100%; display: flex; flex-direction: column; justify-content: stretch;">
+          <p>
+            <label>Email<br>
+              <input type="email" name="_replyto" required>
+            </label>
+          </p>
+          <p>
+            <label>Správa<br>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+          </p>
+          <button type="submit" class="btn btn--primary">Odoslať</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
 </div>
-
-{% include paginator.html %}
