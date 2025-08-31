@@ -1,6 +1,6 @@
 ---
 title: Maďarský gravel pohár Bakony
-layout: posts
+layout: single
 
 ---
 Gravel preteky v Maďarsku boli pre mňa až doteraz veľkou neznámou avšak dobrou PR prácou tamojšej skupiny KLND.eu venujúcej sa téme gravelu u našich južných susedov, som vnímal celkom silnú základňu jazdcov a peknú sériu pretekov rozprestrenú do celého roka.
