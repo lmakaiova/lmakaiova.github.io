@@ -1199,7 +1199,7 @@ sk: &DEFAULT_SK
   comments_title             : "Komentáre"
   more_label                 : "Dozvedieť sa viac"
   related_label              : "Podobné články"
-  follow_label               : "Sleduj:"
+  follow_label               : "Sledovať:"
   feed_label                 : "Zoznam"
   powered_by                 : "Stránka vytvorená pomocou"
   website_label              : "Web stránka"
