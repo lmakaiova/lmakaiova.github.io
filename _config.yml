@@ -62,6 +62,9 @@ defaults:
       type: posts 
     values:
       layout: single
+      read_time: true
+      related: true
+      share: true
   
 # Exclude from processing.
 # The following items will not be processed, by default.
