@@ -1200,7 +1200,7 @@ sk: &DEFAULT_SK
   more_label                 : "Dozvedieť sa viac"
   related_label              : "Podobné články"
   follow_label               : "Sledovať:"
-  feed_label                 : "Zoznam"
+  feed_label                 : "RSS feed"
   powered_by                 : "Stránka vytvorená pomocou"
   website_label              : "Web stránka"
   email_label                : "Email"
