@@ -4,8 +4,7 @@ layout: single
 categories:
   - races
 header:
-  teaser: /assets/images/post_test/img_2_thumbnail.jpeg
-
+  teaser: /assets/bakony_teaser.jpg
 ---
 Gravel preteky v Maďarsku boli pre mňa až doteraz veľkou neznámou avšak dobrou PR prácou tamojšej skupiny KLND.eu venujúcej sa téme gravelu u našich južných susedov, som vnímal celkom silnú základňu jazdcov a peknú sériu pretekov rozprestrenú do celého roka.
 
